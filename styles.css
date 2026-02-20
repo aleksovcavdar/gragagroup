@@ -38,7 +38,6 @@ button, select { font: inherit; }
   white-space:nowrap;border:0;
 }
 
-/* Make interactive elements feel interactive (UX) */
 a, button, select { cursor: pointer; }
 :focus-visible{
   outline: 3px solid rgba(0,113,227,.35);
@@ -124,7 +123,6 @@ a, button, select { cursor: pointer; }
   background: #fff;
   border-radius: 12px;
   padding: 8px 10px;
-  cursor:pointer;
 }
 
 /* Typography */
@@ -174,7 +172,7 @@ h3{
 .stack{ display:grid; gap: 12px; }
 .section-head{ display:grid; gap: 8px; margin-bottom: 14px; }
 
-/* Buttons (clear hover so users know it’s clickable) */
+/* Buttons */
 .hero-actions{
   display:flex;
   gap: 10px;
@@ -190,7 +188,6 @@ h3{
   border: 1px solid var(--line);
   background: #fff;
   font-weight: 650;
-  cursor:pointer;
   text-decoration:none;
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
 }
@@ -211,7 +208,12 @@ h3{
 }
 .btn.primary:hover{ background: #0066cc; }
 
-/* ✅ Counters row */
+.btn.sm{
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/* Counters */
 .stats{
   margin-top: 18px;
   display:grid;
@@ -235,7 +237,7 @@ h3{
   font-size: 12px;
 }
 
-/* Chips look informational (NOT buttons) */
+/* Chips are informational */
 .chips{
   margin-top: 18px;
   display:flex;
@@ -250,11 +252,15 @@ h3{
   padding: 8px 12px;
   font-weight: 650;
   color: var(--muted);
-  cursor: default;           /* 👈 important */
+  cursor: default;
   user-select: none;
 }
+.chip-mini{
+  padding: 6px 10px;
+  font-size: 13px;
+}
 
-/* Media blocks */
+/* Media */
 .hero-media{
   border-radius: var(--radius);
   border: 1px solid rgba(0,0,0,.08);
@@ -328,7 +334,7 @@ h3{
   border: 1px solid rgba(0,0,0,.08);
   border-radius: var(--radius);
   background: #fff;
-  cursor: default; /* not clickable */
+  cursor: default;
 }
 .icon{
   width: 34px;
@@ -341,7 +347,7 @@ h3{
   font-weight: 850;
 }
 
-/* Cards grid (static look to avoid confusion) */
+/* Cards grid */
 .grid{
   margin-top: 18px;
   display:grid;
@@ -353,7 +359,54 @@ h3{
   border-radius: var(--radius);
   background: #fff;
   padding: 16px;
-  cursor: default; /* not clickable */
+  cursor: default;
+}
+
+/* Group headings */
+.group{ margin-top: 18px; }
+.group-title{
+  margin: 6px 0 10px;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Products */
+.grid.grid-2{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.product-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 10px;
+}
+
+.pill{
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(0,0,0,.02);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: default;
+  user-select: none;
+}
+.pill.subtle{ background: transparent; }
+
+.card-actions{
+  margin-top: 12px;
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.hint{
+  color: var(--muted);
+  font-size: 13px;
+  cursor: default;
+  user-select:none;
 }
 
 /* Gallery */
@@ -404,7 +457,7 @@ h3{
   padding: 2px 0;
 }
 
-/* Form (nice focus + hover so users understand inputs) */
+/* Form */
 .form{
   padding: 16px;
   display:grid;
@@ -502,6 +555,7 @@ label{ font-size: 13px; color: var(--muted); display:grid; gap: 6px; }
   .two-col{ grid-template-columns: 1fr; }
   .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .gallery{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid.grid-2{ grid-template-columns: 1fr; }
 }
 
 @media (max-width: 740px){
