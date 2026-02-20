@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Transport company — services, fleet, and contact." />
-  <title>Grga Trans — Transport</title>
+  <meta name="description" content="Grga Group — Transport, logistics and wood pellets in North Macedonia." />
+  <title>Grga Group — Transport & Wood Pellets</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="app.js"></script>
 </head>
@@ -13,12 +13,12 @@
   <header class="header" id="top">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Home">
-        <span class="brand-mark" aria-hidden="true">GT</span>
-        <span class="brand-name">Grga Trans</span>
+        <span class="brand-mark" aria-hidden="true">GG</span>
+        <span class="brand-name">Grga Group</span>
       </a>
 
       <nav class="nav" id="nav">
-        <!-- Language dropdown (before About) -->
+        <!-- Language dropdown -->
         <label class="lang" aria-label="Language">
           <span class="sr-only">Language</span>
           <select id="langSelect" class="lang-select">
@@ -29,7 +29,7 @@
         </label>
 
         <a href="#about" data-i18n="nav_about">About</a>
-        <a href="#services" data-i18n="nav_services">What we do</a>
+        <a href="#services" data-i18n="nav_services">Services & products</a>
         <a href="#fleet" data-i18n="nav_fleet">Fleet</a>
         <a href="#contact" class="nav-cta" data-i18n="nav_contact">Contact</a>
       </nav>
@@ -45,50 +45,36 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow" data-i18n="hero_eyebrow">Transport • Logistics • Fleet</p>
+          <p class="eyebrow" data-i18n="hero_eyebrow">Transport • Logistics • Pellets</p>
 
-          <h1 data-i18n="hero_title">Reliable transport with a modern fleet.</h1>
+          <h1 data-i18n="hero_title">Reliable services with a modern fleet — and quality wood pellets.</h1>
 
           <p class="subhead" data-i18n="hero_subhead">
-            We move materials and goods safely and on time — with clear communication and professional drivers.
+            We deliver transport solutions and supply wood pellets with clear communication and fast response.
           </p>
 
           <div class="hero-actions">
             <a class="btn primary" href="#contact" data-i18n="hero_cta_primary">Request an offer</a>
-            <a class="btn" href="#fleet" data-i18n="hero_cta_secondary">View fleet</a>
+            <a class="btn" href="#services" data-i18n="hero_cta_secondary">See services</a>
           </div>
 
-          <!-- ✅ Counters -->
+          <!-- Counters -->
           <div class="stats" aria-label="Company highlights">
             <div class="stat">
-              <div class="stat-num"
-                   data-counter
-                   data-target="20"
-                   data-suffix="+"
-                   data-duration="1200">0</div>
+              <div class="stat-num" data-counter data-target="20" data-suffix="+" data-duration="1200">0</div>
               <div class="stat-label" data-i18n="stat_years">Years experience</div>
             </div>
-
             <div class="stat">
-              <div class="stat-num"
-                   data-counter
-                   data-target="35"
-                   data-suffix="+"
-                   data-duration="1300">0</div>
+              <div class="stat-num" data-counter data-target="35" data-suffix="+" data-duration="1300">0</div>
               <div class="stat-label" data-i18n="stat_vehicles">Vehicles</div>
             </div>
-
             <div class="stat">
-              <div class="stat-num"
-                   data-counter
-                   data-target="1200"
-                   data-suffix="+"
-                   data-duration="1400">0</div>
+              <div class="stat-num" data-counter data-target="1200" data-suffix="+" data-duration="1400">0</div>
               <div class="stat-label" data-i18n="stat_deliveries">Deliveries</div>
             </div>
           </div>
 
-          <!-- Informational chips (NOT buttons) -->
+          <!-- Informational chips -->
           <div class="chips" aria-label="Highlights">
             <span class="chip" data-i18n="chip_1">Fast response</span>
             <span class="chip" data-i18n="chip_2">Clear offers</span>
@@ -111,12 +97,12 @@
           <h2 data-i18n="about_title">About us</h2>
 
           <p class="lead" data-i18n="about_lead">
-            A transport company built around reliability, safety, and responsibility.
+            A company built around reliability, safety, and responsibility.
           </p>
 
           <p class="text" data-i18n="about_text">
-            We support construction and logistics needs with maintained vehicles, experienced drivers,
-            and a simple process from request → offer → delivery.
+            Grga Group provides transport and logistics services, and also supplies wood pellets for heating.
+            Our focus is simple: quality, clarity, and fast response.
           </p>
 
           <div class="values">
@@ -147,39 +133,99 @@
         </div>
 
         <div class="panel media">
-          <img src="assets/about.jpg" alt="Truck loading / operations"
+          <img src="assets/about.jpg" alt="Operations"
                onerror="this.remove(); this.parentElement.classList.add('placeholder');" />
           <div class="placeholder-note" data-i18n-html="ph_about">Add image: <code>assets/about.jpg</code></div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- SERVICES & PRODUCTS -->
     <section class="section alt" id="services">
       <div class="container">
         <div class="section-head">
-          <h2 data-i18n="services_title">What we do</h2>
-          <p class="text muted" data-i18n="services_sub">Simple, focused services—no clutter.</p>
+          <h2 data-i18n="services_title">Services & products</h2>
+          <p class="text muted" data-i18n="services_sub">
+            Transport plus wood pellets — a simple, reliable offer from one company.
+          </p>
         </div>
 
-        <div class="grid">
-          <article class="card">
-            <h3 data-i18n="svc1_t">Tipper transport</h3>
-            <p class="muted" data-i18n="svc1_d">Bulk materials for construction and infrastructure projects.</p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="svc2_t">Domestic & international routes</h3>
-            <p class="muted" data-i18n="svc2_d">Planned delivery windows with dependable communication.</p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="svc3_t">Flexible scheduling</h3>
-            <p class="muted" data-i18n="svc3_d">Capacity when projects need speed and reliability.</p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="svc4_t">Maintained fleet</h3>
-            <p class="muted" data-i18n="svc4_d">Safety checks and maintenance to reduce downtime.</p>
-          </article>
+        <!-- SERVICES -->
+        <div class="group">
+          <div class="group-title" data-i18n="services_h">Services</div>
+          <div class="grid">
+            <article class="card">
+              <h3 data-i18n="svc1_t">Transport & logistics</h3>
+              <p class="muted" data-i18n="svc1_d">Domestic and international transport with professional coordination.</p>
+            </article>
+
+            <article class="card">
+              <h3 data-i18n="svc2_t">Tipper transport</h3>
+              <p class="muted" data-i18n="svc2_d">Bulk materials for construction and infrastructure projects.</p>
+            </article>
+
+            <article class="card">
+              <h3 data-i18n="svc3_t">Flexible scheduling</h3>
+              <p class="muted" data-i18n="svc3_d">Capacity when projects need speed and reliability.</p>
+            </article>
+
+            <article class="card">
+              <h3 data-i18n="svc4_t">Maintained fleet</h3>
+              <p class="muted" data-i18n="svc4_d">Safety checks and maintenance to reduce downtime.</p>
+            </article>
+          </div>
         </div>
+
+        <!-- PRODUCTS -->
+        <div class="group">
+          <div class="group-title" data-i18n="products_h">Products</div>
+
+          <div class="grid grid-2">
+            <article class="card product">
+              <div class="product-top">
+                <h3 data-i18n="prod1_t">Wood pellets</h3>
+                <span class="pill" data-i18n="prod_pill">Available</span>
+              </div>
+
+              <p class="muted" data-i18n="prod1_d">
+                Quality wood pellets for heating. Order by bags or pallets — with delivery option.
+              </p>
+
+              <div class="chips chips-tight" aria-label="Pellets highlights">
+                <span class="chip chip-mini" data-i18n="prod1_c1">Bags / Pallets</span>
+                <span class="chip chip-mini" data-i18n="prod1_c2">Delivery</span>
+                <span class="chip chip-mini" data-i18n="prod1_c3">Fast response</span>
+              </div>
+
+              <div class="card-actions">
+                <a class="btn sm primary" href="#contact" data-i18n="prod_cta">Ask for price</a>
+                <span class="hint" data-i18n="prod_hint">We reply quickly</span>
+              </div>
+            </article>
+
+            <article class="card product">
+              <div class="product-top">
+                <h3 data-i18n="prod2_t">Delivery & supply</h3>
+                <span class="pill subtle" data-i18n="prod_pill2">Simple</span>
+              </div>
+
+              <p class="muted" data-i18n="prod2_d">
+                We can deliver pellets to your address and coordinate quantities and timing.
+              </p>
+
+              <div class="chips chips-tight" aria-label="Delivery highlights">
+                <span class="chip chip-mini" data-i18n="prod2_c1">Home delivery</span>
+                <span class="chip chip-mini" data-i18n="prod2_c2">Scheduled</span>
+                <span class="chip chip-mini" data-i18n="prod2_c3">Support</span>
+              </div>
+
+              <div class="card-actions">
+                <a class="btn sm" href="#contact" data-i18n="prod_cta2">Contact us</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -232,7 +278,7 @@
           <div class="contact-cards">
             <div class="contact-card">
               <div class="k" data-i18n="contact_email_k">Email</div>
-              <a href="mailto:contact@grga-trans.mk">contact@grga-trans.mk</a>
+              <a href="mailto:contact@grga-group.mk">contact@grga-group.mk</a>
             </div>
             <div class="contact-card">
               <div class="k" data-i18n="contact_phone_k">Phone</div>
@@ -270,12 +316,11 @@
     </section>
   </main>
 
-  <!-- Footer with socials -->
   <footer class="footer">
     <div class="container footer-inner">
-      <div class="muted small">© <span id="year"></span> Grga Trans</div>
+      <div class="muted small">© <span id="year"></span> Grga Group</div>
 
-          <div class="social" aria-label="Social media">
+            <div class="social" aria-label="Social media">
         <a class="social-link" href="https://facebook.com/YOUR_PAGE" target="_blank" rel="noopener" aria-label="Facebook">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8.1V12h2.3V9.8c0-2.3 1.4-3.6 3.5-3.6
@@ -296,7 +341,7 @@
       
       <div class="footer-links">
         <a href="#about" data-i18n="footer_about">About</a>
-        <a href="#fleet" data-i18n="footer_fleet">Fleet</a>
+        <a href="#services" data-i18n="footer_services">Services</a>
         <a href="#contact" data-i18n="footer_contact">Contact</a>
       </div>
     </div>
