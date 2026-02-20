@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Transport company — services, fleet, and contact." />
+  <title>Grga Trans — Transport</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+
+<body>
+  <header class="header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true">GT</span>
+        <span class="brand-name">Grga Trans</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <!-- Language dropdown (before About) -->
+        <label class="lang" aria-label="Language">
+          <span class="sr-only">Language</span>
+          <select id="langSelect" class="lang-select">
+            <option value="en">English</option>
+            <option value="mk">Македонски</option>
+            <option value="sq">Shqip</option>
+          </select>
+        </label>
+
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#services" data-i18n="nav_services">What we do</a>
+        <a href="#fleet" data-i18n="nav_fleet">Fleet</a>
+        <a href="#contact" class="nav-cta" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero_eyebrow">Transport • Logistics • Fleet</p>
+
+          <h1 data-i18n="hero_title">Reliable transport with a modern fleet.</h1>
+
+          <p class="subhead" data-i18n="hero_subhead">
+            We move materials and goods safely and on time — with clear communication and professional drivers.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#contact" data-i18n="hero_cta_primary">Request an offer</a>
+            <a class="btn" href="#fleet" data-i18n="hero_cta_secondary">View fleet</a>
+          </div>
+
+          <!-- ✅ Counters -->
+          <div class="stats" aria-label="Company highlights">
+            <div class="stat">
+              <div class="stat-num"
+                   data-counter
+                   data-target="20"
+                   data-suffix="+"
+                   data-duration="1200">0</div>
+              <div class="stat-label" data-i18n="stat_years">Years experience</div>
+            </div>
+
+            <div class="stat">
+              <div class="stat-num"
+                   data-counter
+                   data-target="35"
+                   data-suffix="+"
+                   data-duration="1300">0</div>
+              <div class="stat-label" data-i18n="stat_vehicles">Vehicles</div>
+            </div>
+
+            <div class="stat">
+              <div class="stat-num"
+                   data-counter
+                   data-target="1200"
+                   data-suffix="+"
+                   data-duration="1400">0</div>
+              <div class="stat-label" data-i18n="stat_deliveries">Deliveries</div>
+            </div>
+          </div>
+
+          <!-- Informational chips (NOT buttons) -->
+          <div class="chips" aria-label="Highlights">
+            <span class="chip" data-i18n="chip_1">Fast response</span>
+            <span class="chip" data-i18n="chip_2">Clear offers</span>
+            <span class="chip" data-i18n="chip_3">Safety-first</span>
+          </div>
+        </div>
+
+        <div class="hero-media" aria-label="Company / fleet hero image">
+          <img src="assets/hero.jpg" alt="Fleet on the road"
+               onerror="this.remove(); document.querySelector('.hero-media').classList.add('placeholder');" />
+          <div class="placeholder-note" data-i18n-html="ph_hero">Add image: <code>assets/hero.jpg</code></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container two-col">
+        <div class="stack">
+          <h2 data-i18n="about_title">About us</h2>
+
+          <p class="lead" data-i18n="about_lead">
+            A transport company built around reliability, safety, and responsibility.
+          </p>
+
+          <p class="text" data-i18n="about_text">
+            We support construction and logistics needs with maintained vehicles, experienced drivers,
+            and a simple process from request → offer → delivery.
+          </p>
+
+          <div class="values">
+            <article class="value">
+              <div class="icon" aria-hidden="true">✓</div>
+              <div>
+                <h3 data-i18n="val1_t">Reliability</h3>
+                <p class="muted" data-i18n="val1_d">Consistent planning and on-time delivery you can count on.</p>
+              </div>
+            </article>
+
+            <article class="value">
+              <div class="icon" aria-hidden="true">⟡</div>
+              <div>
+                <h3 data-i18n="val2_t">Safety</h3>
+                <p class="muted" data-i18n="val2_d">Vehicle maintenance and disciplined operations—every day.</p>
+              </div>
+            </article>
+
+            <article class="value">
+              <div class="icon" aria-hidden="true">↯</div>
+              <div>
+                <h3 data-i18n="val3_t">Communication</h3>
+                <p class="muted" data-i18n="val3_d">Clear updates and quick responses from start to finish.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="panel media">
+          <img src="assets/about.jpg" alt="Truck loading / operations"
+               onerror="this.remove(); this.parentElement.classList.add('placeholder');" />
+          <div class="placeholder-note" data-i18n-html="ph_about">Add image: <code>assets/about.jpg</code></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section alt" id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="services_title">What we do</h2>
+          <p class="text muted" data-i18n="services_sub">Simple, focused services—no clutter.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3 data-i18n="svc1_t">Tipper transport</h3>
+            <p class="muted" data-i18n="svc1_d">Bulk materials for construction and infrastructure projects.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="svc2_t">Domestic & international routes</h3>
+            <p class="muted" data-i18n="svc2_d">Planned delivery windows with dependable communication.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="svc3_t">Flexible scheduling</h3>
+            <p class="muted" data-i18n="svc3_d">Capacity when projects need speed and reliability.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="svc4_t">Maintained fleet</h3>
+            <p class="muted" data-i18n="svc4_d">Safety checks and maintenance to reduce downtime.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLEET -->
+    <section class="section" id="fleet">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="fleet_title">Our fleet</h2>
+          <p class="text muted" data-i18n="fleet_sub">A clean snapshot of what we operate.</p>
+        </div>
+
+        <div class="gallery">
+          <figure class="thumb">
+            <img src="assets/fleet-1.jpg" alt="Fleet photo 1"
+                 onerror="this.remove(); this.parentElement.classList.add('placeholder');" />
+            <div class="placeholder-note">assets/fleet-1.jpg</div>
+          </figure>
+          <figure class="thumb">
+            <img src="assets/fleet-2.jpg" alt="Fleet photo 2"
+                 onerror="this.remove(); this.parentElement.classList.add('placeholder');" />
+            <div class="placeholder-note">assets/fleet-2.jpg</div>
+          </figure>
+          <figure class="thumb">
+            <img src="assets/fleet-3.jpg" alt="Fleet photo 3"
+                 onerror="this.remove(); this.parentElement.classList.add('placeholder');" />
+            <div class="placeholder-note">assets/fleet-3.jpg</div>
+          </figure>
+          <figure class="thumb">
+            <img src="assets/fleet-4.jpg" alt="Fleet photo 4"
+                 onerror="this.remove(); this.parentElement.classList.add('placeholder');" />
+            <div class="placeholder-note">assets/fleet-4.jpg</div>
+          </figure>
+        </div>
+
+        <div class="chips chips-tight">
+          <span class="chip" data-i18n="fleet_c1">Tipper trucks</span>
+          <span class="chip" data-i18n="fleet_c2">Regular maintenance</span>
+          <span class="chip" data-i18n="fleet_c3">Professional drivers</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section alt" id="contact">
+      <div class="container two-col">
+        <div class="stack">
+          <h2 data-i18n="contact_title">Contact</h2>
+          <p class="text muted" data-i18n="contact_sub">Send a message — we respond quickly.</p>
+
+          <div class="contact-cards">
+            <div class="contact-card">
+              <div class="k" data-i18n="contact_email_k">Email</div>
+              <a href="mailto:contact@grga-trans.mk">contact@grga-trans.mk</a>
+            </div>
+            <div class="contact-card">
+              <div class="k" data-i18n="contact_phone_k">Phone</div>
+              <a href="tel:+38970309403">+389 70 309 403</a>
+            </div>
+            <div class="contact-card">
+              <div class="k" data-i18n="contact_loc_k">Location</div>
+              <div class="muted" data-i18n="contact_loc_v">North Macedonia</div>
+            </div>
+          </div>
+        </div>
+
+        <form class="form panel" id="contactForm" novalidate>
+          <label>
+            <span data-i18n="form_name">Name</span>
+            <input class="input" name="name" id="name" required data-i18n-placeholder="ph_name" />
+          </label>
+
+          <label>
+            <span data-i18n="form_email">Email</span>
+            <input class="input" name="email" id="email" type="email" required data-i18n-placeholder="ph_email" />
+          </label>
+
+          <label>
+            <span data-i18n="form_message">Message</span>
+            <textarea class="input textarea" name="message" id="message" rows="5" required data-i18n-placeholder="ph_message"></textarea>
+          </label>
+
+          <button class="btn primary" type="submit" data-i18n="form_send">Send</button>
+          <p class="muted small" data-i18n="form_note">
+            Demo: shows a success toast locally. Connect to Netlify Forms or an API later.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer with socials -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="muted small">© <span id="year"></span> Grga Trans</div>
+
+          <div class="social" aria-label="Social media">
+        <a class="social-link" href="https://facebook.com/YOUR_PAGE" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8.1V12h2.3V9.8c0-2.3 1.4-3.6 3.5-3.6
+                     1 0 2 .2 2 .2v2.2h-1.1c-1.1 0-1.4.7-1.4 1.4V12h2.4l-.4 2.9h-2v7A10 10 0 0 0 22 12z"/>
+          </svg>
+          <span data-i18n="social_facebook">Facebook</span>
+        </a>
+
+        <a class="social-link" href="https://instagram.com/YOUR_PROFILE" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm9 2h-9A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9A3.5 3.5 0 0 0 20 16.5v-9A3.5 3.5 0 0 0 16.5 4z"/>
+            <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+            <path d="M17.6 6.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+          </svg>
+          <span data-i18n="social_instagram">Instagram</span>
+        </a>
+      </div>
+      
+      <div class="footer-links">
+        <a href="#about" data-i18n="footer_about">About</a>
+        <a href="#fleet" data-i18n="footer_fleet">Fleet</a>
+        <a href="#contact" data-i18n="footer_contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" hidden role="status" aria-live="polite"></div>
+</body>
+</html>
