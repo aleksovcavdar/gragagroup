@@ -4,22 +4,22 @@ const toastEl = document.getElementById("toast");
 const form = document.getElementById("contactForm");
 const langSelect = document.getElementById("langSelect");
 
-document.getElementById("year").textContent = String(new Date().getFullYear());
+document.querySelectorAll("#year").forEach(el => el.textContent = String(new Date().getFullYear()));
 
 const LS_LANG = "site_lang";
 
 const I18N = {
   en: {
     nav_about: "About",
-    nav_services: "What we do",
+    nav_services: "Services & products",
     nav_fleet: "Fleet",
     nav_contact: "Contact",
 
-    hero_eyebrow: "Transport • Logistics • Fleet",
-    hero_title: "Reliable transport with a modern fleet.",
-    hero_subhead: "We move materials and goods safely and on time — with clear communication and professional drivers.",
+    hero_eyebrow: "Transport • Logistics • Pellets",
+    hero_title: "Reliable services with a modern fleet — and quality wood pellets.",
+    hero_subhead: "We deliver transport solutions and supply wood pellets with clear communication and fast response.",
     hero_cta_primary: "Request an offer",
-    hero_cta_secondary: "View fleet",
+    hero_cta_secondary: "See services",
 
     stat_years: "Years experience",
     stat_vehicles: "Vehicles",
@@ -33,8 +33,8 @@ const I18N = {
     ph_about: 'Add image: <code>assets/about.jpg</code>',
 
     about_title: "About us",
-    about_lead: "A transport company built around reliability, safety, and responsibility.",
-    about_text: "We support construction and logistics needs with maintained vehicles, experienced drivers, and a simple process from request → offer → delivery.",
+    about_lead: "A company built around reliability, safety, and responsibility.",
+    about_text: "Grga Group provides transport and logistics services, and also supplies wood pellets for heating. Our focus is simple: quality, clarity, and fast response.",
 
     val1_t: "Reliability",
     val1_d: "Consistent planning and on-time delivery you can count on.",
@@ -43,16 +43,38 @@ const I18N = {
     val3_t: "Communication",
     val3_d: "Clear updates and quick responses from start to finish.",
 
-    services_title: "What we do",
-    services_sub: "Simple, focused services—no clutter.",
-    svc1_t: "Tipper transport",
-    svc1_d: "Bulk materials for construction and infrastructure projects.",
-    svc2_t: "Domestic & international routes",
-    svc2_d: "Planned delivery windows with dependable communication.",
+    services_title: "Services & products",
+    services_sub: "Transport plus wood pellets — a simple, reliable offer from one company.",
+    services_h: "Services",
+    products_h: "Products",
+
+    svc1_t: "Transport & logistics",
+    svc1_d: "Domestic and international transport with professional coordination.",
+    svc2_t: "Tipper transport",
+    svc2_d: "Bulk materials for construction and infrastructure projects.",
     svc3_t: "Flexible scheduling",
     svc3_d: "Capacity when projects need speed and reliability.",
     svc4_t: "Maintained fleet",
     svc4_d: "Safety checks and maintenance to reduce downtime.",
+
+    prod_pill: "Available",
+    prod_pill2: "Simple",
+
+    prod1_t: "Wood pellets",
+    prod1_d: "Quality wood pellets for heating. Order by bags or pallets — with delivery option.",
+    prod1_c1: "Bags / Pallets",
+    prod1_c2: "Delivery",
+    prod1_c3: "Fast response",
+
+    prod2_t: "Delivery & supply",
+    prod2_d: "We can deliver pellets to your address and coordinate quantities and timing.",
+    prod2_c1: "Home delivery",
+    prod2_c2: "Scheduled",
+    prod2_c3: "Support",
+
+    prod_cta: "Ask for price",
+    prod_cta2: "Contact us",
+    prod_hint: "We reply quickly",
 
     fleet_title: "Our fleet",
     fleet_sub: "A clean snapshot of what we operate.",
@@ -74,10 +96,10 @@ const I18N = {
     form_note: "Demo: shows a success toast locally. Connect to Netlify Forms or an API later.",
     ph_name: "Your name",
     ph_email: "you@email.com",
-    ph_message: "Tell us what you need (route, cargo, timeframe)…",
+    ph_message: "Tell us what you need (route, cargo, pellets quantity, timeframe)…",
 
     footer_about: "About",
-    footer_fleet: "Fleet",
+    footer_services: "Services",
     footer_contact: "Contact",
 
     social_facebook: "Facebook",
@@ -91,15 +113,15 @@ const I18N = {
 
   mk: {
     nav_about: "За нас",
-    nav_services: "Што работиме",
+    nav_services: "Услуги и производи",
     nav_fleet: "Возен парк",
     nav_contact: "Контакт",
 
-    hero_eyebrow: "Транспорт • Логистика • Возен парк",
-    hero_title: "Сигурен транспорт со модерен возен парк.",
-    hero_subhead: "Пренесуваме материјали и стока безбедно и навреме — со јасна комуникација и професионални возачи.",
+    hero_eyebrow: "Транспорт • Логистика • Пелети",
+    hero_title: "Сигурни услуги со модерен возен парк — и квалитетни дрвени пелети.",
+    hero_subhead: "Нудиме транспортни решенија и дрвени пелети со јасна комуникација и брз одговор.",
     hero_cta_primary: "Побарајте понуда",
-    hero_cta_secondary: "Погледни возен парк",
+    hero_cta_secondary: "Види услуги",
 
     stat_years: "Години искуство",
     stat_vehicles: "Возила",
@@ -113,8 +135,8 @@ const I18N = {
     ph_about: 'Додадете слика: <code>assets/about.jpg</code>',
 
     about_title: "За нас",
-    about_lead: "Транспортна компанија изградена на доверливост, безбедност и одговорност.",
-    about_text: "Поддржуваме градежни и логистички потреби со одржувани возила, искусни возачи и едноставен процес од барање → понуда → испорака.",
+    about_lead: "Компанија изградена на доверливост, безбедност и одговорност.",
+    about_text: "Grga Group нуди транспорт и логистика, а исто така продава дрвени пелети за греење. Нашиот фокус е едноставен: квалитет, јасност и брз одговор.",
 
     val1_t: "Доверливост",
     val1_d: "Планирање и навремена испорака на која можете да се потпрете.",
@@ -123,16 +145,38 @@ const I18N = {
     val3_t: "Комуникација",
     val3_d: "Јасни информации и брз одговор од почеток до крај.",
 
-    services_title: "Што работиме",
-    services_sub: "Едноставни и фокусирани услуги — без непотребни детали.",
-    svc1_t: "Кипер транспорт",
-    svc1_d: "Превоз на рефус материјали за градежни и инфраструктурни проекти.",
-    svc2_t: "Домашни и меѓународни релации",
-    svc2_d: "Планирани термини со сигурна комуникација.",
+    services_title: "Услуги и производи",
+    services_sub: "Транспорт и дрвени пелети — едноставна и сигурна понуда од една компанија.",
+    services_h: "Услуги",
+    products_h: "Производи",
+
+    svc1_t: "Транспорт и логистика",
+    svc1_d: "Домашен и меѓународен транспорт со професионална координација.",
+    svc2_t: "Кипер транспорт",
+    svc2_d: "Рефус материјали за градежни и инфраструктурни проекти.",
     svc3_t: "Флексибилно закажување",
     svc3_d: "Капацитет кога проектите бараат брзина и сигурност.",
     svc4_t: "Одржуван возен парк",
     svc4_d: "Проверки и одржување за помал застој.",
+
+    prod_pill: "Достапно",
+    prod_pill2: "Едноставно",
+
+    prod1_t: "Дрвени пелети (пелети)",
+    prod1_d: "Квалитетни дрвени пелети за греење. Нарачка во ќеси или палети — со опција за достава.",
+    prod1_c1: "Ќеси / Палети",
+    prod1_c2: "Достава",
+    prod1_c3: "Брз одговор",
+
+    prod2_t: "Достава и снабдување",
+    prod2_d: "Можеме да доставиме пелети на ваша адреса и да договориме количини и термин.",
+    prod2_c1: "Достава до дома",
+    prod2_c2: "По договор",
+    prod2_c3: "Поддршка",
+
+    prod_cta: "Побарај цена",
+    prod_cta2: "Контактирајте нè",
+    prod_hint: "Одговараме брзо",
 
     fleet_title: "Возен парк",
     fleet_sub: "Чист преглед на тоа што го оперираме.",
@@ -154,10 +198,10 @@ const I18N = {
     form_note: "Демо: локално прикажува успешна порака. Подоцна поврзете Netlify Forms или API.",
     ph_name: "Вашето име",
     ph_email: "vie@email.com",
-    ph_message: "Напишете што ви треба (релација, товар, термин)…",
+    ph_message: "Напишете што ви треба (релација, товар, количина пелети, термин)…",
 
     footer_about: "За нас",
-    footer_fleet: "Возен парк",
+    footer_services: "Услуги",
     footer_contact: "Контакт",
 
     social_facebook: "Facebook",
@@ -171,15 +215,15 @@ const I18N = {
 
   sq: {
     nav_about: "Rreth nesh",
-    nav_services: "Shërbimet",
+    nav_services: "Shërbime & Produkte",
     nav_fleet: "Flota",
     nav_contact: "Kontakt",
 
-    hero_eyebrow: "Transport • Logjistikë • Flotë",
-    hero_title: "Transport i besueshëm me flotë moderne.",
-    hero_subhead: "Transportojmë materiale dhe mallra në mënyrë të sigurt dhe në kohë — me komunikim të qartë dhe shoferë profesionalë.",
+    hero_eyebrow: "Transport • Logjistikë • Peletë",
+    hero_title: "Shërbime të besueshme me flotë moderne — dhe peletë druri cilësore.",
+    hero_subhead: "Ofrojmë zgjidhje transporti dhe furnizojmë peletë druri me komunikim të qartë dhe përgjigje të shpejtë.",
     hero_cta_primary: "Kërko ofertë",
-    hero_cta_secondary: "Shiko flotën",
+    hero_cta_secondary: "Shiko shërbimet",
 
     stat_years: "Vite përvojë",
     stat_vehicles: "Mjete",
@@ -193,8 +237,8 @@ const I18N = {
     ph_about: 'Shto imazh: <code>assets/about.jpg</code>',
 
     about_title: "Rreth nesh",
-    about_lead: "Një kompani transporti e ndërtuar mbi besueshmëri, siguri dhe përgjegjësi.",
-    about_text: "Mbështesim nevojat e ndërtimit dhe logjistikës me mjete të mirëmbajtura, shoferë me përvojë dhe një proces të thjeshtë nga kërkesa → oferta → dorëzimi.",
+    about_lead: "Një kompani e ndërtuar mbi besueshmëri, siguri dhe përgjegjësi.",
+    about_text: "Grga Group ofron transport dhe logjistikë, si dhe shet peletë druri për ngrohje. Fokus: cilësi, qartësi dhe përgjigje e shpejtë.",
 
     val1_t: "Besueshmëri",
     val1_d: "Planifikim i qëndrueshëm dhe dorëzim në kohë.",
@@ -203,16 +247,38 @@ const I18N = {
     val3_t: "Komunikim",
     val3_d: "Përditësime të qarta dhe përgjigje të shpejta.",
 
-    services_title: "Shërbimet",
-    services_sub: "Të thjeshta dhe të fokusuara — pa ngarkesë.",
-    svc1_t: "Transport me kiper",
-    svc1_d: "Materiale të derdhshme për projekte ndërtimi dhe infrastrukture.",
-    svc2_t: "Rrugë vendore & ndërkombëtare",
-    svc2_d: "Orar i planifikuar me komunikim të besueshëm.",
+    services_title: "Shërbime & Produkte",
+    services_sub: "Transport plus peletë druri — një ofertë e thjeshtë dhe e besueshme nga një kompani.",
+    services_h: "Shërbime",
+    products_h: "Produkte",
+
+    svc1_t: "Transport & logjistikë",
+    svc1_d: "Transport vendor dhe ndërkombëtar me koordinim profesional.",
+    svc2_t: "Transport me kiper",
+    svc2_d: "Materiale të derdhshme për projekte ndërtimi dhe infrastrukture.",
     svc3_t: "Planifikim fleksibël",
     svc3_d: "Kapacitet kur projektet kërkojnë shpejtësi dhe siguri.",
     svc4_t: "Flotë e mirëmbajtur",
     svc4_d: "Kontrolle sigurie dhe mirëmbajtje për më pak ndërprerje.",
+
+    prod_pill: "Në dispozicion",
+    prod_pill2: "E thjeshtë",
+
+    prod1_t: "Peletë druri",
+    prod1_d: "Peletë druri cilësore për ngrohje. Porosi me thasë ose paleta — me opsion dërgese.",
+    prod1_c1: "Thasë / Paleta",
+    prod1_c2: "Dërgesë",
+    prod1_c3: "Përgjigje e shpejtë",
+
+    prod2_t: "Dërgesë & furnizim",
+    prod2_d: "Mund t’i dërgojmë peletët në adresën tuaj dhe të koordinojmë sasinë dhe kohën.",
+    prod2_c1: "Dërgesë në shtëpi",
+    prod2_c2: "Me orar",
+    prod2_c3: "Mbështetje",
+
+    prod_cta: "Kërko çmim",
+    prod_cta2: "Na kontakto",
+    prod_hint: "Përgjigjemi shpejt",
 
     fleet_title: "Flota jonë",
     fleet_sub: "Një pamje e pastër e asaj që operojmë.",
@@ -234,10 +300,10 @@ const I18N = {
     form_note: "Demo: shfaq një mesazh suksesi lokalisht. Lidhe me Netlify Forms ose API më vonë.",
     ph_name: "Emri juaj",
     ph_email: "ju@email.com",
-    ph_message: "Na trego çfarë të duhet (rruga, ngarkesa, afati)…",
+    ph_message: "Na trego çfarë të duhet (rruga, ngarkesa, sasia e peletëve, afati)…",
 
     footer_about: "Rreth nesh",
-    footer_fleet: "Flota",
+    footer_services: "Shërbime",
     footer_contact: "Kontakt",
 
     social_facebook: "Facebook",
@@ -259,7 +325,6 @@ langSelect.addEventListener("change", () => {
   if (!I18N[lang]) return;
   applyLanguage(lang);
   saveLang(lang);
-  // Re-format counters for locale (1,200 vs 1.200)
   refreshCountersText();
 });
 
@@ -276,7 +341,7 @@ Array.from(nav.querySelectorAll('a[href^="#"]')).forEach(a => {
   });
 });
 
-/* Smooth scroll */
+/* Smooth scroll with sticky header offset */
 document.addEventListener("click", (e) => {
   const a = e.target.closest('a[href^="#"]');
   if (!a) return;
@@ -290,7 +355,7 @@ document.addEventListener("click", (e) => {
   window.scrollTo({ top, behavior: "smooth" });
 });
 
-/* Form demo validation */
+/* Contact form demo validation */
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const name = document.getElementById("name").value.trim();
@@ -351,7 +416,6 @@ function initCounters() {
   const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   if (reduceMotion) {
-    // No animation for reduced motion users
     counters.forEach(el => setCounterValue(el, getTarget(el)));
     return;
   }
@@ -373,33 +437,29 @@ function initCounters() {
 function animateCounter(el){
   const target = getTarget(el);
   const duration = getDuration(el);
-  const start = 0;
   const startTime = performance.now();
 
   const step = (now) => {
     const t = Math.min(1, (now - startTime) / duration);
-    // easeOutCubic
-    const eased = 1 - Math.pow(1 - t, 3);
-    const value = start + (target - start) * eased;
+    const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+    const value = target * eased;
 
     setCounterValue(el, value);
 
     if (t < 1) requestAnimationFrame(step);
-    else setCounterValue(el, target); // ensure exact
+    else setCounterValue(el, target);
   };
 
   requestAnimationFrame(step);
 }
 
 function getTarget(el){
-  const raw = el.dataset.target || "0";
-  const n = Number(raw);
+  const n = Number(el.dataset.target || "0");
   return Number.isFinite(n) ? n : 0;
 }
 
 function getDuration(el){
-  const raw = el.dataset.duration || "1200";
-  const n = Number(raw);
+  const n = Number(el.dataset.duration || "1200");
   return Number.isFinite(n) ? Math.max(300, n) : 1200;
 }
 
@@ -410,7 +470,6 @@ function getLocale(){
 }
 
 function formatNumber(value){
-  // integers only for this site; if you want decimals add data-decimals
   const locale = getLocale();
   return new Intl.NumberFormat(locale, { maximumFractionDigits: 0 }).format(Math.round(value));
 }
@@ -418,9 +477,8 @@ function formatNumber(value){
 function setCounterValue(el, value){
   const prefix = el.dataset.prefix || "";
   const suffix = el.dataset.suffix || "";
-  const text = `${prefix}${formatNumber(value)}${suffix}`;
-  el.textContent = text;
-  el.dataset.value = String(value); // keep current for re-format on language change
+  el.textContent = `${prefix}${formatNumber(value)}${suffix}`;
+  el.dataset.value = String(value);
 }
 
 function refreshCountersText(){
