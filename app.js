@@ -336,9 +336,30 @@ navToggle.addEventListener("click", () => {
 
 Array.from(nav.querySelectorAll('a[href^="#"]')).forEach(a => {
   a.addEventListener("click", () => {
-    nav.classList.remove("open");
-    navToggle.setAttribute("aria-expanded", "false");
+    closeNav();
   });
+});
+
+/* ✅ Close nav on outside click / Esc / resize */
+function closeNav(){
+  nav.classList.remove("open");
+  navToggle.setAttribute("aria-expanded", "false");
+}
+
+document.addEventListener("click", (e) => {
+  if (!nav.classList.contains("open")) return;
+  const clickedInsideNav = e.target.closest("#nav");
+  const clickedToggle = e.target.closest("#navToggle");
+  if (clickedInsideNav || clickedToggle) return;
+  closeNav();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeNav();
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 740) closeNav();
 });
 
 /* Smooth scroll with sticky header offset */
@@ -414,7 +435,6 @@ function initCounters() {
   if (!counters.length) return;
 
   const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   if (reduceMotion) {
     counters.forEach(el => setCounterValue(el, getTarget(el)));
     return;
@@ -441,7 +461,7 @@ function animateCounter(el){
 
   const step = (now) => {
     const t = Math.min(1, (now - startTime) / duration);
-    const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+    const eased = 1 - Math.pow(1 - t, 3);
     const value = target * eased;
 
     setCounterValue(el, value);
